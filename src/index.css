@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  .reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .reveal.active {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+.scroll-header {
+  @apply fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-sm transition-transform duration-300;
+}
+
+.scroll-header.hidden {
+  @apply -translate-y-full;
+}
+
+.logo-scroll {
+  @apply flex gap-8 animate-scroll;
+}
+
+.logo-scroll > * {
+  @apply flex-shrink-0;
+}
